@@ -62,9 +62,11 @@ int print_cpuinfo(void)
 	unsigned int kpll = get_pll_clk(KPLL);
 	unsigned int mpll = get_pll_clk(MPLL);
 	unsigned int bpll = get_pll_clk(BPLL);
+	unsigned int vpll = get_pll_clk(VPLL);
 
 	printf("APLL = %ldMHz, KPLL = %ldMHz\n", apll/1000000, kpll/1000000);
 	printf("MPLL = %ldMHz, BPLL = %ldMHz\n", mpll/1000000, bpll/1000000);
+	printf("VPLL = %ldMHz\n", vpll/1000000);
 #endif
 #else
 	char buf[32];

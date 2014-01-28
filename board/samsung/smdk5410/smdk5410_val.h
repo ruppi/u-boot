@@ -25,12 +25,14 @@
 #define BPLL_LOCK_OFFSET		0x20010
 #define CPLL_LOCK_OFFSET		0x10020
 #define MPLL_LOCK_OFFSET		0x04000
+#define VPLL_LOCK_OFFSET		0x10050
 
 #define APLL_LOCK_VAL			(0x320)
 #define MPLL_LOCK_VAL			(0x258)
 #define BPLL_LOCK_VAL			(0x258)
 #define CPLL_LOCK_VAL			(0x258)
 #define KPLL_LOCK_VAL			(0x258)
+#define VPLL_LOCK_VAL			(0x258)
 
 
 /*******************************************************************************
@@ -385,6 +387,13 @@
 
 #define MPLL_CON0_VAL			(0x810A0302)
 #define MPLL_CON1_VAL			(0x0020F300)
+
+/* VPLL */
+#define VPLL_CON0_OFFSET		0x10140
+#define VPLL_CON1_OFFSET		0x10144
+
+#define VPLL_CON0_VAL			(0x80AF0302)
+#define VPLL_CON1_VAL			(0x0020F300)
 
 
 /*******************************************************************************

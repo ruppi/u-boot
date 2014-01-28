@@ -73,6 +73,10 @@ system_clock_init:
 	ldr	r2, =BPLL_LOCK_OFFSET		@0x20010
 	str	r1, [r0, r2]
 
+	ldr	r1, =VPLL_LOCK_VAL		@0x258
+	ldr	r2, =VPLL_LOCK_OFFSET		@0x20010
+	str	r1, [r0, r2]
+
 	ldr r1, =CPLL_LOCK_VAL
 	ldr r2, =CPLL_LOCK_OFFSET
 	str r1, [r0, r2]
@@ -179,6 +183,17 @@ system_clock_init:
 
 	ldr	r1, =BPLL_CON0_VAL		@0x80C80301
 	ldr	r2, =BPLL_CON0_OFFSET		@0x20110
+	str	r1, [r0, r2]
+
+	bl	wait_pll_lock
+
+@ Set VPLL
+	ldr	r1, =VPLL_CON1_VAL		@0x0020F300
+	ldr	r2, =VPLL_CON1_OFFSET		@0x20114
+	str	r1, [r0, r2]
+
+	ldr	r1, =VPLL_CON0_VAL		@0x80AF0302
+	ldr	r2, =VPLL_CON0_OFFSET		@0x20110
 	str	r1, [r0, r2]
 
 	bl	wait_pll_lock
